@@ -248,4 +248,15 @@ button {
     opacity: 0.9;
   }
   
+  button:disabled {
+    background-color: #ccc; /* Gray for disabled buttons */
+    cursor: not-allowed;
+  }
+  
+  button:enabled {
+    background-color: #28a745; /* Green for enabled buttons */
+    cursor: pointer;
+  }
+  
+  
   
