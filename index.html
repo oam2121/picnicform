@@ -41,7 +41,7 @@
         <div class="form-group">
           <label for="contact2">Contact Number 2</label>
           <input type="tel" id="contact2" name="contact2" placeholder="Enter secondary contact number (optional)">
-        </div>        
+        </div>
         <div class="form-group">
           <label for="email">Email ID</label>
           <input type="email" id="email" name="email" placeholder="Enter email" required>
@@ -83,21 +83,22 @@
       </section>
       
       <!-- Section 3: Additional Information -->
-      <section class="form-section" id="section3">
-        <h2 class="section-title">Additional Information</h2>
-        <ul>
-          <li>Mode of Transportation: Bus (Details will be shared closer to the date).</li>
-          <li>Reporting Time: [Insert Time]</li>
-          <li>Pickup/Drop-off Location: [Insert Location]</li>
-        </ul>
-        <h2 class="section-title">Instructions</h2>
-        <ul>
-          <li>Participants must carry a water bottle, towel, and extra pair of clothes.</li>
-          <li>Wear comfortable clothing and footwear suitable for water activities.</li>
-          <li>Avoid carrying valuable items like expensive jewelry or electronic gadgets.</li>
-          <li>Notify organizers about special needs or dietary restrictions.</li>
-          <li>Arrive at the pickup point on time.</li>
-        </ul>
+     <!-- Section 3: Additional Information -->
+     <section class="form-section" id="section3">
+      <h2 class="section-title">Additional Information</h2>
+      <ul>
+        <li>Mode of Transportation: Bus (Details will be shared closer to the date).</li>
+        <li>Reporting Time: [Insert Time]</li>
+        <li>Pickup/Drop-off Location: [Insert Location]</li>
+      </ul>
+      <h2 class="section-title">Instructions</h2>
+      <ul>
+        <li>Participants must carry a water bottle, towel, and extra pair of clothes.</li>
+        <li>Wear comfortable clothing and footwear suitable for water activities.</li>
+        <li>Avoid carrying valuable items like expensive jewelry or electronic gadgets.</li>
+        <li>Notify organizers about special needs or dietary restrictions.</li>
+        <li>Arrive at the pickup point on time.</li>
+      </ul>
         <button type="button" class="back-button" onclick="prevSection(2)">Back</button>
         <button type="button" class="next-button" onclick="nextSection(4)">Next</button>
       </section>
@@ -114,13 +115,21 @@
           </select>          
         </div>
         <div id="cashDetails" style="display: none;">
-          <p>Please bring the exact cash amount to the event organizer.</p>
+          <p>Please bring the exact cash amount to the organizer.</p>
         </div>
         <div id="upiDetails" style="display: none; text-align: center;">
-          <p>Scan the QR code below to pay the amount:</p>
+          <p>Scan the QR code below to pay:</p>
           <img src="https://i.ibb.co/X54jP1L/Screenshot-20241123-124247-GPay.jpg" alt="UPI QR Code" style="width: 200px; margin: 10px;">
           <p><strong>UPI ID:</strong> oamshah2121@oksbi</p>
           <p id="amountToPay" style="font-size: 18px; font-weight: bold;">Amount: ₹0</p>
+        </div>
+        <div class="form-group">
+          <label for="paymentStatus">Select Payment Status</label>
+          <select id="paymentStatus" name="paymentStatus" required>
+            <option value="">--Select Payment Status--</option>
+            <option value="Paid">Paid</option>
+            <option value="Unpaid">Unpaid</option>
+          </select>
         </div>
         <div class="button-container">
           <button type="button" class="back-button" onclick="prevSection(3)">Back</button>
@@ -132,11 +141,14 @@
       <section class="form-section" id="thankYouSection" style="display: none;">
         <h2>Thank You!</h2>
         <p>Your form has been successfully submitted. You may now close the form.</p>
+        <button id="downloadPdfButton" disabled onclick="generatePDF()">Download Your Form as PDF</button>
         <button onclick="location.reload()">Go Back</button>
-      </section>
+      </section>      
     </form>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
